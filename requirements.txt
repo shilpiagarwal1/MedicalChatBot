@@ -1,0 +1,14 @@
+sentence-transformers
+langchain
+flask
+pypdf
+python-dotenv==1.0.1
+pinecone[grpc]
+langchain-pinecone
+langchain_community
+langchain_openai
+langchain_experimental
+langchain-groq==0.1.6
+ipykernel
+langchain_ollama
+-e .
