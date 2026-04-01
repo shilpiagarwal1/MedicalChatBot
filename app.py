@@ -9,7 +9,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from src.prompt import *
 import os
-
+from langchain_pinecone import PineconeVectorStore
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -27,10 +27,10 @@ os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 embeddings = download_hugging_face_embeddings()
 
 
-index_name = "medicalbot"
+index_name = "nutrition"
 
 # Embed each chunk and upsert the embeddings into your Pinecone index.
-docsearch = Pinecone.from_existing_index(
+docsearch = PineconeVectorStore.from_existing_index(
     index_name=index_name,
     embedding=embeddings
 )
